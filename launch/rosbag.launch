@@ -1,0 +1,13 @@
+<launch>
+  <!-- emcl2を起動 -->
+  <include file="$(find emcl2)/launch/emcl2.launch">
+    <!--arg name="scan_topic" value="scan"/-->
+  </include>
+
+  <!-- rvizを起動 -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find orne_box_navigation_executor)/rviz_cfg/nav.rviz" />
+
+  <!-- map_serverを起動 -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find orne_box_navigation_executor)/maps/mymap.yaml" />
+</launch>
+
