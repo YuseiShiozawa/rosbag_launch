@@ -8,6 +8,6 @@
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find orne_box_navigation_executor)/rviz_cfg/nav.rviz" />
 
   <!-- map_serverを起動 -->
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find orne_box_navigation_executor)/maps/mymap.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find orne_box_navigation_executor)/maps/tsudanuma.yaml" />
 </launch>
 

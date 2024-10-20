@@ -1,0 +1,5 @@
+<launch>
+  <!-- rvizを起動 -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find orne_box_navigation_executor)/rviz_cfg/nav.rviz" />
+</launch>
+
