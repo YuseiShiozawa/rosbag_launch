@@ -1,13 +1,12 @@
 <launch>
-  <!-- emcl2を起動 -->
-  <include file="$(find emcl2)/launch/emcl2.launch">
-    <!--arg name="scan_topic" value="scan"/-->
-  </include>
+  <!-- yolov9 -->
+  <include file="$(find yolov9_bringup)/launch/yolov9_theta.launch">
 
-  <!-- rvizを起動 -->
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find orne_box_navigation_executor)/rviz_cfg/nav.rviz" />
+  <!-- simple_stiching -->
+  <include file="$(find theta_simple_stitching)/launch/simple_stitching.launch" />
 
-  <!-- map_serverを起動 -->
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find orne_box_navigation_executor)/maps/tsudanuma.yaml" />
+  <!-- bev2graph -->
+  <node name="bev2graph_script" pkg="yolov9_ros" type="python3"
+        args="$(find yolov9_ros)/scripts/bev2graph.py" output="screen" />
 </launch>
 
