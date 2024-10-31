@@ -1,12 +1,12 @@
 <launch>
   <!-- yolov9 -->
-  <include file="$(find yolov9_bringup)/launch/yolov9_theta.launch">
+  <include file="$(find yolov9_bringup)/launch/yolov9_theta.launch" />
 
   <!-- simple_stiching -->
   <include file="$(find theta_simple_stitching)/launch/simple_stitching.launch" />
 
   <!-- bev2graph -->
-  <node name="bev2graph_script" pkg="yolov9_ros" type="python3"
-        args="$(find yolov9_ros)/scripts/bev2graph.py" output="screen" />
+  <!-- node name="bev2graph_script" pkg="yolov9_ros" type="python3"
+        args="$(find yolov9_ros)/scripts/bev2graph.py" output="screen" /-->
 </launch>
 
